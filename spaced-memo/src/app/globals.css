@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--color-primary: #1c5d99;
+		--color-text-main: #ffffff;
+		--color-text-support: #d8eaec;
+		--color-background-main: #222222;
+		--color-background-support: #bbcde5;
+	}
+
+	* { box-sizing: border-box; }
+
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		background: var(--color-background-main);
+		color: var(--color-text-support);
+		@apply font-signika
+	}
+}
