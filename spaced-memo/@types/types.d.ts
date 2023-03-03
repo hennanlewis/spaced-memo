@@ -11,6 +11,7 @@ interface Deck {
 	reviewCardsLimit: number
 	orderType: OrderType
 	createdAt: Date
+	modifiedAt?: Date
 }
 
 interface NoteType {
@@ -26,6 +27,7 @@ interface Note {
 	fields: string[]
 	easeValue: number
 	createdAt: Date
+	modifiedAt?: Date
 }
 
 type CardStatus = "new" | "review" | "wrong" 

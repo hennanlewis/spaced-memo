@@ -1,5 +1,6 @@
 "use client"
-import { ChangeEvent, FormEvent, useState } from "react"
+import { ChangeEvent, useState } from "react"
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
 import { noteDefaultValues } from "utils/defaultValues"
 import { generateSimpleID } from "utils/generateSimpleID"
 
@@ -9,55 +10,78 @@ const decksNames = [
 	{ simpleID: "asdf", name: "Padrão" },
 	{ simpleID: "isne", name: "Opção 2" },
 ]
-const noteType: NoteType[] = [
-	{ simpleID: "asdf", name: "Opção 01", fieldsNames: ["Frente", "Verso"] },
-	{ simpleID: "oabh", name: "Opção 02", fieldsNames: ["Verso", "Frente"] },
-]
-export default function AddNote() {
-	const [notes, setNotes] = useState(noteDefaultValues)
-	const [filteredNoteType] = noteType.filter(
-		(item) => item.simpleID == notes.noteTypeID
-	)
 
-	const handleChange = (event: ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
-		const { name, value } = event.target
-		setNotes((values) => ({ ...values, [name]: value }))
+const noteType = [
+	{ simpleID: "oabh", name: "Padrão", fieldsNames: ["Verso", "Frente"] },
+	{ simpleID: "asdf", name: "Opção 01", fieldsNames: ["Frente", "Verso"] },
+]
+
+export default function AddNote() {
+	const [selectedOption, setSelectedOption] = useState<NoteType | null>(
+		noteType[0]
+	)
+	const { formState: { errors, dirtyFields }, handleSubmit, register, } = useForm()
+
+	const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
+		const selectedNote =
+			noteType.find(
+				(note) => note.simpleID === event.target.value
+			)
+
+		if (selectedNote) setSelectedOption(selectedNote)
 	}
 
-	const handleSubmit = (event: FormEvent) => {
-		event.preventDefault()
-		setNotes((values) => ({ ...values, simpleID: generateSimpleID(5) }))
-		console.log(notes)
+	const handleNoteType = (event: ChangeEvent<HTMLSelectElement>) => {
+		handleChange(event)
+		setSelectedOption(
+			noteType.find((note) => note.simpleID === event.target.value)!
+		)
+	}
+
+	const onSubmit: SubmitHandler<FieldValues> = (data) => {
+		console.log({
+			...noteDefaultValues,
+			...data,
+			simpleID: generateSimpleID(5),
+		})
 	}
 
 	return (
-		<form className={styles.form} onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 			<label>
 				<span>Baralho: </span>
-				<select name="deckID" onChange={handleChange}>
-					{decksNames.map((item) => (
-						<option key={item.simpleID} value={item.simpleID}>
-							{item.name}
-						</option>
+				<select {...register("deckID", { required: true })}>
+					{decksNames.map((deck) => (
+						<option key={deck.simpleID} value={deck.simpleID}>{deck.name}</option>
 					))}
 				</select>
+				{errors.deckID && <span>Campo obrigatório</span>}
 			</label>
+
 			<label>
 				<span>Tipo de nota: </span>
-				<select name="noteTypeID" onChange={handleChange}>
-					{noteType.map((item) => (
-						<option key={item.simpleID} value={item.simpleID}>
-							{item.name}
+				<select
+					{...register("noteTypeID", { required: true })}
+					onChange={handleNoteType}>
+					{noteType.map((noteTypeID) => (
+						<option key={noteTypeID.simpleID} value={noteTypeID.simpleID}>
+							{noteTypeID.name}
 						</option>
 					))}
 				</select>
+				{errors.noteTypeID && <span>Campo obrigatório</span>}
 			</label>
-			{filteredNoteType?.fieldsNames.map((item, index) => (
-				<label key={item}>
-					<span>{item}</span>
-					<input type="text" name={item.toLowerCase()} value={notes.fields[index]} onChange={handleChange} />
+
+			{selectedOption?.fieldsNames.map((fieldName, index) => (
+				<label key={index}>
+					<span>{fieldName}</span>
+					<input {...register(`fields[${index}]`, { required: true })} />
+					{errors.fields && errors.fields[index] && (
+						<span>Campo obrigatório</span>
+					)}
 				</label>
 			))}
+
 			<button type="submit">Adicionar nota</button>
 		</form>
 	)

@@ -3,7 +3,8 @@ import { ChangeEvent, FormEvent , useState } from "react"
 
 import { deckDefaultValues } from "utils/defaultValues"
 import { generateSimpleID } from "utils/generateSimpleID"
-import styles from "./add-deck.module.css"
+
+import styles from "./page.module.css"
 
 export default function AddDeck() {
 	const [deck, setDeck] = useState(deckDefaultValues)
@@ -19,17 +20,22 @@ export default function AddDeck() {
 	}
 
 	return (
-		<form className={styles.form}  onSubmit={handleSubmit}>
-			<label>
-				<span>Nome: </span>
-				<input
-					type="text"
-					name="name"
-					onChange={handleName}
-					value={deck.name}
-				/>
-			</label>
-			<button type="submit">Criar baralho</button>
-		</form>
+		<>
+			<form className={styles.form} onSubmit={handleSubmit}>
+				<label className={styles.labelSet}>
+					<span className={styles.labelText}>Nome: </span>
+					<input
+						type="text"
+						name="name"
+						className={styles.input}
+						onChange={handleName}
+						value={deck.name}
+					/>
+				</label>
+				<button type="submit" className={styles.button}>
+					Criar baralho
+				</button>
+			</form>
+		</>
 	)
 }
