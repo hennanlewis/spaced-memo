@@ -3,6 +3,7 @@ type OrderType = "random" | "added date"
 interface Deck {
 	simpleID: string
 	name: string
+	description: string
 	startEaseRate: number
 	intervalModifierRate: number
 	hardIntervalRate: number
@@ -17,7 +18,7 @@ interface Deck {
 interface NoteType {
 	simpleID: string
 	name: string
-	fieldsNames: string[]
+	fields: { name: string }[]
 }
 
 interface Note {
@@ -30,11 +31,18 @@ interface Note {
 	modifiedAt?: Date
 }
 
-type CardStatus = "new" | "review" | "wrong" 
+type CardStatus = "new" | "review" | "wrong"
 
 interface Card {
 	noteID: string
 	name: string
 	modifiedAt: Date
 	status: CardStatus
+}
+
+interface IconsPath {
+	path: string
+	text: string
+	icon: JSX.Element
+	outlineIcon: JSX.Element
 }

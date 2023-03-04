@@ -1,9 +1,0 @@
-.form { @apply flex flex-col gap-2; }
-
-.form label { @apply flex flex-col; }
-
-.form span { @apply p-1; }
-
-.form input, .form button { @apply px-2 py-1 text-black rounded; }
-
-.form button { @apply p-1 bg-primary text-skin-main; }

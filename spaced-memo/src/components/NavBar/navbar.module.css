@@ -1,0 +1,39 @@
+.navbar {
+	@apply flex flex-col items-center sm:items-stretch gap-4 p-4 pr-0 bg-tone1 text-white;
+}
+
+.navbar h1 {
+	@apply pr-8 text-3xl font-bold whitespace-nowrap;
+}
+
+.navbar nav {
+	@apply flex flex-col gap-2;
+}
+
+.navbar nav a {
+	@apply relative flex items-center gap-2 px-3 py-2 text-lg rounded-lg duration-200;
+}
+
+.navbar nav a::before {
+	content: "";
+	@apply md:absolute w-4 h-4 -top-4 md:right-0 md:bg-transparent md:shadow-[0.4rem_0.4rem_var(--color-muted)] rounded-lg duration-200;
+}
+
+.navbar nav a::after {
+	content: "";
+	@apply md:absolute w-4 h-4 -bottom-4 md:right-0 md:bg-transparent md:shadow-[0.4rem_-0.4rem_var(--color-muted)] rounded-lg duration-200;
+}
+
+.active {
+	@apply flex items-center gap-2 bg-skin-main text-tone1 rounded-xl md:rounded-r-none;
+}
+
+.navbar nav a.active::before {
+	content: "";
+	@apply md:shadow-[0.4rem_0.4rem_var(--color-background-main)];
+}
+
+.navbar nav a.active::after {
+	content: "";
+	@apply md:shadow-[0.4rem_-0.4rem_var(--color-background-main)];
+}

@@ -1,0 +1,11 @@
+.form { @apply flex flex-col gap-2; }
+
+.form label { @apply flex flex-col; }
+
+.form span { @apply p-1; }
+
+.form input, .form select {
+	@apply p-1 bg-white text-black border border-tone2 outline-tone1 rounded;
+}
+
+.form button { @apply p-1 bg-tone1 font-medium text-skin-support rounded; }

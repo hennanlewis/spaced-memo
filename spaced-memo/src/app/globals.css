@@ -4,21 +4,28 @@
 
 @layer base {
 	:root {
-		--color-primary: #1c5d99;
-		--color-text-main: #ffffff;
-		--color-text-support: #d8eaec;
-		--color-background-main: #222222;
-		--color-background-support: #bbcde5;
+		--color-text-main: #045e24;
+		--color-text-support: #fefffe;
+		--color-text-muted: #799b85;
+		--color-background-main: #efffef;
+		--color-background-support: #222222;
+		--color-background-muted: #e9fee5;
+		--color-tone1: #196159;
+		--color-tone2: #2f9363;
+		--color-tone3: #55c889;
 	}
 
-	* { box-sizing: border-box; }
+	* {
+		box-sizing: border-box;
+	}
 
 	body {
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		background: var(--color-background-main);
-		color: var(--color-text-support);
-		@apply font-signika
+		background: var(--color-tone1);
+		color: var(--color-text-main);
+		@apply font-signika;
 	}
+
 }

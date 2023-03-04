@@ -1,3 +1,4 @@
+import Main from "@/components/Main"
 import { Signika } from "next/font/google"
 
 import "./globals.css"
@@ -15,9 +16,11 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="pt-br">
+		<html lang="pt-BR">
 			<body className={signika.variable}>
+				<Main>
 				{children}
+				</Main>
 			</body>
 		</html>
 	)

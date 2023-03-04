@@ -1,6 +1,7 @@
 export const deckDefaultValues: Deck = {
 	simpleID: "",
 	name: "",
+	description: "",
 	startEaseRate: 2.5,
 	intervalModifierRate: 1,
 	hardIntervalRate: 1.2,
@@ -11,6 +12,11 @@ export const deckDefaultValues: Deck = {
 	createdAt: new Date(),
 }
 
+export const noteTypeDefaultValues: NoteType = {
+	simpleID: "",
+	name: "",
+	fields: ["Frente", "Verso"],
+}
 
 export const noteDefaultValues : Note = {
 	simpleID: "",

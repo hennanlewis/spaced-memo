@@ -11,7 +11,9 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				primary: "var(--color-primary)"
+				tone1: "var(--color-tone1)",
+				tone2: "var(--color-tone2)",
+				tone3: "var(--color-tone3)",
 			},
 			fontFamily: {
 				signika: ["var(--font-signika)"],
@@ -24,12 +26,14 @@ module.exports = {
 				skin: {
 					main: "var(--color-text-main)",
 					support: "var(--color-text-support)",
+					muted: "var(--color-text-muted)",
 				},
 			},
 			backgroundColor: {
 				skin: {
 					main: "var(--color-background-main)",
 					support: "var(--color-background-support)",
+					muted: "var(--color-background-muted)",
 				},
 			},
 		},

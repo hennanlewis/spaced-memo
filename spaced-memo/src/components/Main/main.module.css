@@ -1,0 +1,7 @@
+.orientation {
+	@apply flex flex-col md:flex-row p-2 sm:p-4 min-h-[100dvh];
+}
+
+.main {
+	@apply flex px-6 py-4 w-full bg-skin-main rounded-xl;
+}
