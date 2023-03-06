@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
 	content: [
 		"./app/**/*.{js,ts,jsx,tsx}",
@@ -11,16 +12,19 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				tone1: "var(--color-tone1)",
-				tone2: "var(--color-tone2)",
-				tone3: "var(--color-tone3)",
+				"tone1": "var(--color-tone1)",
+				"tone1-var": "var(--color-tone1-variant)",
+				"tone2": "var(--color-tone2)",
+				"tone2-var": "var(--color-tone2-variant)",
+				"tone3": "var(--color-tone3)",
+				"tone3-var": "var(--color-tone3-variant)",
 			},
 			fontFamily: {
 				signika: ["var(--font-signika)"],
 			},
 			screens: {
 				xs: "360px",
-				sm: "480px",
+				sm: "640px",
 			},
 			textColor: {
 				skin: {

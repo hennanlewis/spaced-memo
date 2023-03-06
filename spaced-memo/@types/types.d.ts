@@ -46,3 +46,10 @@ interface IconsPath {
 	icon: JSX.Element
 	outlineIcon: JSX.Element
 }
+
+interface DataCard {
+	name: string
+	new: number
+	wrong: number
+	review: number
+}

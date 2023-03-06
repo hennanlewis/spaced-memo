@@ -5,12 +5,12 @@ interface MainProps {
 	children: React.ReactNode
 }
 
-export default function Main({children}: MainProps) {
+export default function Main({ children }: MainProps) {
 	return (
 		<div className={styles.orientation}>
 			<NavBar />
 			<main className={styles.main}>
-				{children}
+				<div>{children}</div>
 			</main>
 		</div>
 	)

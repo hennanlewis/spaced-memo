@@ -25,18 +25,24 @@ export default function AddDeck() {
 	}
 
 	return (
-		<form className={styles.form} onSubmit={handleSubmit}>
-			<label className={styles.labelSet}>
-				<span className={styles.labelText}>Nome: </span>
-				<input
-					type="text"
-					name="name"
-					className={styles.input}
-					onChange={handleName}
-					value={deck.name}
-				/>
-			</label>
-			<button type="submit">Criar baralho</button>
-		</form>
+		<section className={styles.mainOptions}>
+			<div className={styles.topInfo}>
+				<h1>Baralhos</h1>
+			</div>
+
+			<form className={styles.form} onSubmit={handleSubmit}>
+				<label className={styles.labelSet}>
+					<span className={styles.labelText}>Nome: </span>
+					<input
+						type="text"
+						name="name"
+						className={styles.input}
+						onChange={handleName}
+						value={deck.name}
+					/>
+				</label>
+				<button type="submit">Criar baralho</button>
+			</form>
+		</section>
 	)
 }

@@ -1,0 +1,60 @@
+.mainOptions {
+	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-auto text-skin-support;
+}
+
+.topInfo {
+	@apply col-span-full flex justify-between md:justify-end flex-wrap gap-10 text-skin-main;
+}
+
+.topInfo h1 {
+	@apply mr-auto mb-auto w-full font-bold text-4xl border-b-4 border-tone1;
+}
+
+.infoTotalTime, .infoTotalCards {
+	@apply flex flex-col items-center p-4 leading-none;
+}
+
+.infoTotalTime span:last-child, .infoTotalCards span:last-child {
+	@apply text-4xl;
+}
+
+.deckDataCard {
+	@apply flex p-2 shadow-md hover:shadow-lg hover:shadow-black/50 shadow-black/50 rounded-lg hover:scale-[1.01] hover:-translate-y-1 duration-200;
+}
+
+.deckDataCard h2 {
+	@apply w-full font-medium text-2xl text-center;
+}
+
+.deckDataCard:nth-child(3n+2) {
+	@apply bg-gradient-to-t from-tone1 to-tone1-var;
+}
+
+.deckDataCard:nth-child(3n) {
+	@apply bg-gradient-to-t from-tone2 to-tone2-var;
+}
+
+.deckDataCard:nth-child(3n+1) {
+	@apply bg-gradient-to-t from-tone3 to-tone3-var text-skin-main;
+}
+
+.deckDataCard > div {
+	@apply flex flex-col justify-between w-full;
+}
+
+.totalCards {
+	@apply flex flex-col justify-center items-center flex-1 p-2 h-full bg-white text-skin-main aspect-square rounded;
+}
+
+.totalCards span:first-child {
+	@apply font-light;
+}
+
+.totalCards span:last-child {
+	@apply font-bold text-3xl leading-none;
+}
+
+.todayCardsInfo { @apply flex justify-evenly gap-2; }
+.todayCards { @apply flex flex-col justify-center items-center; }
+.todayCards span:first-child { @apply font-light text-xs leading-none; }
+.todayCards span:last-child { @apply font-bold text-lg leading-none; }

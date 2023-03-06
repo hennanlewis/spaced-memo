@@ -4,15 +4,18 @@
 
 @layer base {
 	:root {
-		--color-text-main: #045e24;
+		--color-text-main: #021e04;
 		--color-text-support: #fefffe;
 		--color-text-muted: #799b85;
 		--color-background-main: #efffef;
 		--color-background-support: #222222;
 		--color-background-muted: #e9fee5;
 		--color-tone1: #196159;
+		--color-tone1-variant: #4e887e;
 		--color-tone2: #2f9363;
-		--color-tone3: #55c889;
+		--color-tone2-variant: #5eae86;
+		--color-tone3: #a4c956;
+		--color-tone3-variant: #c8e39f;
 	}
 
 	* {
@@ -22,7 +25,7 @@
 	body {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		height: 100vh;
 		background: var(--color-tone1);
 		color: var(--color-text-main);
 		@apply font-signika;

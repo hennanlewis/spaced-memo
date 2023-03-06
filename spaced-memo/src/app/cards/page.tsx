@@ -12,8 +12,16 @@ const decksNames = [
 ]
 
 const noteType = [
-	{ simpleID: "oabh", name: "Padrão", fields: [{name:"Verso"}, {name:"Frente"}] },
-	{ simpleID: "asdf", name: "Opção 01", fields: [{name:"Frente"}, {name:"Verso"}] },
+	{
+		simpleID: "oabh",
+		name: "Padrão",
+		fields: [{ name: "Verso" }, { name: "Frente" }],
+	},
+	{
+		simpleID: "asdf",
+		name: "Opção 01",
+		fields: [{ name: "Frente" }, { name: "Verso" }],
+	},
 ]
 
 export default function AddNote() {
@@ -50,47 +58,55 @@ export default function AddNote() {
 	}
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-			<label>
-				<span>Baralho: </span>
-				<select {...register("deckID", { required: true })}>
-					{decksNames.map((deck) => (
-						<option key={deck.simpleID} value={deck.simpleID}>
-							{deck.name}
-						</option>
-					))}
-				</select>
-				{errors.deckID && <span>Campo obrigatório</span>}
-			</label>
+		<section className={styles.mainOptions}>
+			<div className={styles.topInfo}>
+				<h1>Cartões</h1>
+			</div>
 
-			<label>
-				<span>Tipo de nota: </span>
-				<select
-					{...register("noteTypeID", { required: true })}
-					onChange={handleNoteType}>
-					{noteType.map((noteTypeID) => (
-						<option
-							key={noteTypeID.simpleID}
-							value={noteTypeID.simpleID}>
-							{noteTypeID.name}
-						</option>
-					))}
-				</select>
-				{errors.noteTypeID && <span>Campo obrigatório</span>}
-			</label>
-
-			{selectedOption?.fields?.map((fieldName, index) => (
-				<label key={index}>
-					<span>{fieldName.name}</span>
-					<input
-						{...register(`fields[${index}]`, { required: true })}
-					/>
-					{errors.fields && errors.fields[index] && (
-						<span>Campo obrigatório</span>
-					)}
+			<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+				<label>
+					<span>Baralho: </span>
+					<select {...register("deckID", { required: true })}>
+						{decksNames.map((deck) => (
+							<option key={deck.simpleID} value={deck.simpleID}>
+								{deck.name}
+							</option>
+						))}
+					</select>
+					{errors.deckID && <span>Campo obrigatório</span>}
 				</label>
-			))}
-			<button type="submit">Adicionar nota</button>
-		</form>
+
+				<label>
+					<span>Tipo de nota: </span>
+					<select
+						{...register("noteTypeID", { required: true })}
+						onChange={handleNoteType}>
+						{noteType.map((noteTypeID) => (
+							<option
+								key={noteTypeID.simpleID}
+								value={noteTypeID.simpleID}>
+								{noteTypeID.name}
+							</option>
+						))}
+					</select>
+					{errors.noteTypeID && <span>Campo obrigatório</span>}
+				</label>
+
+				{selectedOption?.fields?.map((fieldName, index) => (
+					<label key={index}>
+						<span>{fieldName.name}</span>
+						<input
+							{...register(`fields[${index}]`, {
+								required: true,
+							})}
+						/>
+						{errors.fields && errors.fields[index] && (
+							<span>Campo obrigatório</span>
+						)}
+					</label>
+				))}
+				<button type="submit">Adicionar nota</button>
+			</form>
+		</section>
 	)
 }

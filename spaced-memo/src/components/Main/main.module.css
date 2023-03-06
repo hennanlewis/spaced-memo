@@ -1,7 +1,13 @@
 .orientation {
-	@apply flex flex-col md:flex-row p-2 sm:p-4 min-h-[100dvh];
+	@apply flex flex-col sm:flex-row p-2 sm:p-4 min-h-[100dvh];
 }
 
 .main {
-	@apply flex px-6 py-4 w-full bg-skin-main rounded-xl;
+	@apply flex p-2 sm:p-3 w-full h-full bg-skin-main rounded-xl overflow-hidden;
+}
+
+.main > div {
+	overflow: auto;
+	scrollbar-width: thin;
+	@apply flex w-full p-1 sm:rounded-xl;
 }
