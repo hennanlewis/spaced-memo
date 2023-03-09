@@ -7,7 +7,6 @@
 }
 
 .main > div {
-	overflow: auto;
 	scrollbar-width: thin;
-	@apply flex w-full p-1 sm:rounded-xl;
+	@apply flex w-full p-1 sm:rounded-xl overflow-auto;
 }

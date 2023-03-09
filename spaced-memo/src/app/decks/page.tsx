@@ -2,12 +2,12 @@
 import TopTitle from "../../components/TopTitle"
 import { ChangeEvent, FormEvent, useState } from "react"
 
-import { deckDefaultValues } from "utils/defaultValues"
-import { generateSimpleID } from "utils/generateSimpleID"
+import { deckDefaultValues } from "@/utils/defaultValues"
+import { generateSimpleID } from "@/utils/generateSimpleID"
 
 import styles from "./page.module.css"
 
-export default function AddDeck() {
+export default function Deck() {
 	const [deck, setDeck] = useState(deckDefaultValues)
 
 	const handleName = (event: ChangeEvent<HTMLInputElement>) => {

@@ -1,5 +1,5 @@
 .navbar {
-	@apply flex flex-col items-stretch sm:gap-4 p-4 sm:pr-0 bg-tone1 text-white;
+	@apply flex flex-col items-stretch sm:gap-4 p-4 sm:pr-0 text-white;
 }
 
 .navbar h1 {

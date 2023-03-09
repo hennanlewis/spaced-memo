@@ -7,12 +7,12 @@ import {
 	useForm,
 } from "react-hook-form"
 import { HiTrash } from "react-icons/hi"
-import { generateSimpleID } from "utils/generateSimpleID"
+import { generateSimpleID } from "@/utils/generateSimpleID"
 
 import TopTitle from "../../components/TopTitle"
 import styles from "./page.module.css"
 
-export default function Type() {
+export default function Types() {
 	const {
 		control,
 		formState: { errors, dirtyFields },

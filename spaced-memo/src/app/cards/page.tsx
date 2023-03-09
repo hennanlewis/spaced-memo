@@ -1,8 +1,8 @@
 "use client"
 import { ChangeEvent, useState } from "react"
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
-import { noteDefaultValues } from "utils/defaultValues"
-import { generateSimpleID } from "utils/generateSimpleID"
+import { noteDefaultValues } from "@/utils/defaultValues"
+import { generateSimpleID } from "@/utils/generateSimpleID"
 
 import styles from "./page.module.css"
 
@@ -24,7 +24,7 @@ const noteType = [
 	},
 ]
 
-export default function AddNote() {
+export default function Cards() {
 	const [selectedOption, setSelectedOption] = useState<NoteType | null>(
 		noteType[0]
 	)

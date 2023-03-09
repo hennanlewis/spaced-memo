@@ -1,15 +1,7 @@
-import { convertTime } from "utils/convertTime"
+import Link from "next/link"
+import { convertTime } from "@/utils/convertTime"
+import { decks } from "@/utils/decks"
 import styles from "./page.module.css"
-
-const decks: DataCard[] = [
-	{ name: "Padrão", new: 10, wrong: 10, review: 20 },
-	{ name: "Matemática", new: 10, wrong: 10, review: 20 },
-	{ name: "Biologia", new: 10, wrong: 10, review: 20 },
-	{ name: "Química", new: 10, wrong: 10, review: 20 },
-	{ name: "Japonês", new: 10, wrong: 10, review: 20 },
-	{ name: "Inglês", new: 10, wrong: 10, review: 20 },
-	{ name: "Curitiba", new: 10, wrong: 10, review: 20 },
-]
 
 export default function Home() {
 	const totalCards = decks.reduce((total, item) => {
@@ -34,7 +26,10 @@ export default function Home() {
 				</div>
 			</div>
 			{decks.map((deck) => (
-				<div key={deck.name} className={styles.deckDataCard}>
+				<Link
+					key={deck.simpleID}
+					href={`/review-info/${deck.simpleID}`}
+					className={styles.deckDataCard}>
 					<div className={styles.totalCards}>
 						<span>Total</span>
 						<span>{deck.new + deck.review + deck.wrong}</span>
@@ -62,7 +57,7 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-				</div>
+				</Link>
 			))}
 		</section>
 	)

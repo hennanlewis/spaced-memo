@@ -47,8 +47,7 @@ interface IconsPath {
 	outlineIcon: JSX.Element
 }
 
-interface DataCard {
-	name: string
+interface DataCard extends Deck {
 	new: number
 	wrong: number
 	review: number

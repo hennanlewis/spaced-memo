@@ -1,0 +1,12 @@
+.mainOptions { @apply flex flex-col w-full; }
+.answers { @apply flex flex-col justify-center items-center gap-2 mx-auto w-[20rem] h-full; }
+.options { @apply grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-2 mt-auto; }
+
+.again, .hard, .good, .easy {
+	@apply p-2 md:p-4 font-bold text-sm text-white leading-none uppercase border rounded-md;
+}
+
+.again { @apply col-span-3 sm:col-span-1 bg-red-600; }
+.hard { @apply bg-amber-600; }
+.good { @apply bg-blue-600; }
+.easy { @apply bg-green-600; }

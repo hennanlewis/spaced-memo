@@ -26,9 +26,12 @@
 		display: flex;
 		flex-direction: column;
 		height: 100vh;
-		background: var(--color-tone1);
+		background: linear-gradient(-135deg,
+			var(--color-tone1),
+			var(--color-tone1),
+			var(--color-tone2)
+		);
 		color: var(--color-text-main);
 		@apply font-signika;
 	}
-
 }

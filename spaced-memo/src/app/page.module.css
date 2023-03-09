@@ -30,11 +30,11 @@
 	@apply bg-gradient-to-t from-tone1 to-tone1-var;
 }
 
-.deckDataCard:nth-child(3n) {
+.deckDataCard:nth-child(3n+3) {
 	@apply bg-gradient-to-t from-tone2 to-tone2-var;
 }
 
-.deckDataCard:nth-child(3n+1) {
+.deckDataCard:nth-child(3n+4) {
 	@apply bg-gradient-to-t from-tone3 to-tone3-var text-skin-main;
 }
 
