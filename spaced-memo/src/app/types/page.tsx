@@ -9,6 +9,7 @@ import {
 import { HiTrash } from "react-icons/hi"
 import { generateSimpleID } from "utils/generateSimpleID"
 
+import TopTitle from "../../components/TopTitle"
 import styles from "./page.module.css"
 
 export default function Type() {
@@ -41,9 +42,7 @@ export default function Type() {
 
 	return (
 		<section className={styles.mainOptions}>
-			<div className={styles.topInfo}>
-				<h1>Tipos de baralho</h1>
-			</div>
+			<TopTitle>Tipos de cartões</TopTitle>
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 				<label>
 					<span>Nome do tipo: </span>

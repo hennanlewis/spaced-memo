@@ -10,7 +10,7 @@ export default function NavBar() {
 
 	return (
 		<section className={styles.navbar}>
-			<h1>Space Memo</h1>
+			<h1>Spaced Memo</h1>
 			<nav>
 				<div className={styles.mdNav}>
 					{IconsPath.map((item) => (

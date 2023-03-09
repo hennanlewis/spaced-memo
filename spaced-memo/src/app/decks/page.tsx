@@ -1,5 +1,5 @@
 "use client"
-import Main from "@/components/Main"
+import TopTitle from "../../components/TopTitle"
 import { ChangeEvent, FormEvent, useState } from "react"
 
 import { deckDefaultValues } from "utils/defaultValues"
@@ -26,9 +26,7 @@ export default function AddDeck() {
 
 	return (
 		<section className={styles.mainOptions}>
-			<div className={styles.topInfo}>
-				<h1>Baralhos</h1>
-			</div>
+			<TopTitle>Baralhos</TopTitle>
 
 			<form className={styles.form} onSubmit={handleSubmit}>
 				<label className={styles.labelSet}>

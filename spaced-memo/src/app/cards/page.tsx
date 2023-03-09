@@ -59,7 +59,7 @@ export default function AddNote() {
 
 	return (
 		<section className={styles.mainOptions}>
-			<div className={styles.topInfo}>
+			<div className={styles.TopTitle}>
 				<h1>Cartões</h1>
 			</div>
 

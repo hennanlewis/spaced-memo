@@ -1,0 +1,7 @@
+.topTitle {
+	@apply col-span-full flex justify-between md:justify-end flex-wrap gap-10;
+}
+
+.topTitle h1 {
+	@apply mr-auto mb-auto w-full font-bold text-4xl border-b-4 border-tone1;
+}
