@@ -12,6 +12,21 @@ Recursos que este projeto busca completar:
 - [ ] Interface de usuário intuitiva e fácil de usar
 - [ ] Estatísticas de revisão
 
+# Algoritmo de cálculo do intervalo no Anki
+Para entender o cálculo de escolha de novo intervalo do Anki, primeiro é necessário entender que necessita de alguns valores iniciais de taxa de intervalo:
+- taxa de intervalo fácil, e seu valor padrão é 2,5;
+- taxa de intervalo difícil, e seu valor padrão é 1,2;
+- taxa bonus para fácil, e seu valor padrão é 1,3;
+- taxa de modificador de intervalo.
+
+Ao estudar um cartão, existem quatro opções para selecionar de acordo com a dificuldade: outra vez, difícil, bom e fácil. Cada uma dessas dificuldades,  processo de cálculo é pareceido mas tem ligeiras mudanças, então:
+- Caso a alternativa selecionada seja "outra vez", o cartão volta para a fila diária e a `taxa de intervalo para fácil` diminui 0,2;
+- Caso a alternativa selecionada seja "difícil", a `taxa de intervalo para fácil` diminui 0,15 e o novo intervalo é calculado com `valor atual do intervalo * taxa de intervalo difícil * taxa de modificador de intervalo`;
+- Caso a alternativa selecionada seja "bom", a `taxa de intervalo para fácil` não muda e o novo intervalo é calculado com `valor atual do intervalo taxa de intervalo fácil * taxa de modificador de intervalo`;
+- Caso a alternativa selecionada seja "fácil", a `taxa de intervalo para fácil` aumenta 0,15 e o novo intervalo é calculado com `valor atual do intervalo * taxa de intervalo fácil * taxa de modificador de intervalo`.
+
+O valor da `taxa de intervalo para fácil` não pode ser menor que 1 nem maior que 2,5 e todas as outras taxas não podem ser 0.
+
 # Instalação e execução
 
 1. Após clonar o repositório para sua máquina, execute o seguinte código por linha de comando na pasta em que o projeto se encontra para instalar as dependências necessárias:
