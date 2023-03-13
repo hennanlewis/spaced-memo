@@ -27,6 +27,9 @@ Ao estudar um cartão, existem quatro opções para selecionar de acordo com a d
 
 O valor da `taxa de intervalo para fácil` não pode ser menor que 1 nem maior que 2,5 e todas as outras taxas não podem ser 0.
 
+# Requerimentos para instalação
+Ter o Node.js instalado, no meu caso, eu tenho preferência por utilizar o gerenciador de pacotes do `yanr`, mas não é realmente algo necessário, o guia de instalação não mostra como fazer somente com ele.
+
 # Instalação e execução
 
 1. Após clonar o repositório para sua máquina, execute o seguinte código por linha de comando na pasta em que o projeto se encontra para instalar as dependências necessárias:
